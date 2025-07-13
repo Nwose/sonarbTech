@@ -9,7 +9,7 @@ import logo from "../assets/logo.png"; // Update path if necessary
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-yellow-100 via-pink-100 to-blue-100 text-gray-800 pt-16 pb-8 px-6 md:px-16 mt-20 relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-yellow-100 via-pink-100 to-blue-100 text-gray-800 pt-16 pb-8 px-6 md:px-16 mt-0 relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute top-[-30px] left-[-40px] w-40 h-40 bg-pink-200 rounded-full blur-2xl opacity-30 animate-ping" />
       <div className="absolute bottom-[-30px] right-[-40px] w-44 h-44 bg-yellow-300 rounded-full blur-3xl opacity-40 animate-pulse" />
