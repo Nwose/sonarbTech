@@ -6,7 +6,7 @@ import heroImage from "../assets/EduTech.jpg"; // Adjust the path as necessary
 
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-to-br from-yellow-100 via-pink-50 to-blue-100 text-gray-900 min-h-screen px-6 md:px-16 py-8 overflow-hidden relative">
+    <section className="bg-gradient-to-br from-yellow-100 via-pink-50 to-blue-100 text-gray-900 min-h-screen px-6 md:px-16 py-8  overflow-hidden relative">
       {/* Background blobs */}
       <div className="absolute top-10 left-5 w-24 h-24 bg-pink-300 rounded-full blur-2xl opacity-40 animate-pulse" />
       <div className="absolute bottom-16 right-10 w-32 h-32 bg-yellow-200 rounded-full blur-3xl opacity-30 animate-ping" />

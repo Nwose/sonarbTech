@@ -11,16 +11,19 @@ function App() {
   return (
     <div className="font-sans">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <div className="pt-[80px]">
+        {" "}
+        {/* Adjust this based on your Navbar height */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );
 }
-
 export default App;

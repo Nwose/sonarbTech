@@ -1,24 +1,46 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Courses", path: "/courses" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  const linkClass = "text-md font-medium transition hover:text-gray-900";
+  const activeClass =
+    "text-purple-700 font-semibold underline underline-offset-4";
+
   return (
-    <header className="w-full bg-gradient-to-r from-yellow-100 via-yellow-100 to-pink-100 shadow-md z-50">
+    <header className="fixed top-0 left-0 w-full bg-gradient-to-r from-yellow-100 via-yellow-100 to-pink-100 shadow-md z-50">
       {/* Nav Container */}
-      <div className="w-full flex justify-between items-center py-4 px-6 md:px-10">
+      <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-10">
         {/* Logo */}
-        <img src={logo} alt="SonarB Logo" className="w-12 h-12" />
+        <NavLink to="/">
+          <img src={logo} alt="SonarB Logo" className="w-12 h-12" />
+        </NavLink>
 
         {/* Desktop Nav Links */}
-        <ul className="hidden md:flex gap-6 text-md font-medium text-gray-700">
-          <li className="hover:text-gray-900 cursor-pointer">Home</li>
-          <li className="hover:text-gray-900 cursor-pointer">About</li>
-          <li className="hover:text-gray-900 cursor-pointer">Service</li>
-          <li className="hover:text-gray-900 cursor-pointer">Courses</li>
-          <li className="hover:text-gray-900 cursor-pointer">Blog</li>
+        <ul className="hidden md:flex gap-6 text-gray-700">
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <NavLink
+                to={link.path}
+                className={({ isActive }) =>
+                  `${linkClass} ${isActive ? activeClass : ""}`
+                }
+              >
+                {link.name}
+              </NavLink>
+            </li>
+          ))}
         </ul>
 
         {/* Desktop CTA Button */}
@@ -42,11 +64,19 @@ const Navbar = () => {
         }`}
       >
         <ul className="flex flex-col gap-4 text-gray-700">
-          <li className="hover:text-gray-900 cursor-pointer">Home</li>
-          <li className="hover:text-gray-900 cursor-pointer">About</li>
-          <li className="hover:text-gray-900 cursor-pointer">Service</li>
-          <li className="hover:text-gray-900 cursor-pointer">Courses</li>
-          <li className="hover:text-gray-900 cursor-pointer">Blog</li>
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <NavLink
+                to={link.path}
+                className={({ isActive }) =>
+                  `${linkClass} ${isActive ? activeClass : ""}`
+                }
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </NavLink>
+            </li>
+          ))}
         </ul>
         <button className="mt-4 w-full animated-cta py-2 font-semibold rounded-full text-white shadow-md">
           Get Started
