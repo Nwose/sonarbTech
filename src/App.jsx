@@ -13,7 +13,6 @@ function App() {
       <Navbar />
       <div className="pt-[80px]">
         {" "}
-        {/* Adjust this based on your Navbar height */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

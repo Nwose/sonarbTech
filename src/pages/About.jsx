@@ -153,7 +153,7 @@ const About = () => {
             Be part of the future of technology education. Start your journey
             with us today.
           </p>
-          <button className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105">
+          <button className="animated-cta px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 text-white">
             Get Started <FaArrowRight className="inline ml-2" />
           </button>
         </motion.div>
